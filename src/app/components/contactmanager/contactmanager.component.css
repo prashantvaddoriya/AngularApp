@@ -1,1 +1,28 @@
 
+.demo-toggles {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .demo-toggles * {
+    margin-bottom: 16px;
+  }
+  
+  .demo-options {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+  }
+  
+  .demo-data * {
+    margin: 16px 0;
+  }
+  
+  .demo-paginator {
+    width: 600px;
+  }
+  .paging{
+    float: right;
+    /* margin-top:130px; */
+    margin-right: 20px;
+  }
