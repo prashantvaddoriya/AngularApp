@@ -13,6 +13,22 @@
       </tr>
     </tbody>
   </table>
+
+  <b>Company Wise Report</b>
+<table>
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mapItem of companyData">
+        <td>{{ mapItem[0] }}</td>
+        <td>{{ mapItem[1] }}</td>
+      </tr>
+    </tbody>
+  </table>
   <!-- Here, we're using the keys().next().value method to retrieve the key of the first entry in each map. This assumes that each map only contains a single entry.
   
   Use the Component in Your Application:

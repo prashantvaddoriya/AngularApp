@@ -8,6 +8,7 @@ import { ContactService } from 'src/app/services/contact.service';
 })
 export class ReportComponent implements OnInit {
   data: any = [];
+  companyData : any = [];
   constructor(private contsservice: ContactService) { }
 
 
@@ -16,6 +17,15 @@ export class ReportComponent implements OnInit {
       response => {
         // Convert the response object to an array of key-value pairs
         this.data = Object.entries(response);
+      },
+      error => {
+        console.error('Error fetching data:', error);
+      }
+    );
+    this.contsservice.getHobbyStatistics().subscribe(
+      response => {
+        // Convert the response object to an array of key-value pairs
+        this.companyData = Object.entries(response);
       },
       error => {
         console.error('Error fetching data:', error);

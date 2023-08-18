@@ -47,6 +47,12 @@ export class ContactService {
 
   }
 
+  getCompanyStatistics(): Observable<Map<string, number>[]> {
+    let dataurl: string = `${this.baseurl}/GetCompanyStatistics`;
+    return this.http.get<any>(dataurl);
+
+  }
+
   public handleError(error: HttpErrorResponse) {
     let errormassage: string = '';
     if (error.error instanceof ErrorEvent) {
