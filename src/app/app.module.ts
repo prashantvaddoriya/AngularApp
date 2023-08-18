@@ -18,6 +18,7 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { ReportComponent } from './components/report/report.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     PageNotFoundComponent,
     SpinnerComponent,
     SearchPipe,
+    ReportComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,16 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { Mycontact } from '../mycontact';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContactService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   private baseurl: string = `https://contact-api-container.azurewebsites.net/api/Contact`;
 
-  getallcontacts(pageSize:number , pageNumber:number): Observable<Mycontact> {
+  getallcontacts(pageSize: number, pageNumber: number): Observable<Mycontact> {
     let dataurl: string = `${this.baseurl}/GetContacts?pageSize=${pageSize}&pageNumber=${pageNumber}`;
     return this.http.get<Mycontact>(dataurl).pipe(catchError(this.handleError));
   }
@@ -40,6 +40,11 @@ export class ContactService {
     return this.http
       .delete<Mycontact>(dataurl)
       .pipe(catchError(this.handleError));
+  }
+  getHobbyStatistics(): Observable<Map<string, number>[]> {
+    let dataurl: string = `${this.baseurl}/GetHobbyStatistics`;
+    return this.http.get<any>(dataurl);
+
   }
 
   public handleError(error: HttpErrorResponse) {

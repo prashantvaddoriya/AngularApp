@@ -1,0 +1,31 @@
+<b>Hobby Wise Report</b>
+<table>
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mapItem of data">
+        <td>{{ mapItem[0] }}</td>
+        <td>{{ mapItem[1] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Here, we're using the keys().next().value method to retrieve the key of the first entry in each map. This assumes that each map only contains a single entry.
+  
+  Use the Component in Your Application:
+  In your main template or any other component's template, you can now use your DataTableComponent to display the data.
+  html
+  Copy code
+  <app-data-table></app-data-table>
+  Remember, this is just a simple example. Depending on your specific needs, you might need to modify the structure of the data, the way you're accessing the keys and values, and the styling of the table. Also, make sure that the DataTableComponent is correctly declared in your module's declarations array for it to be recognized in your templates.
+  
+  Additionally, if you plan to work with more complex data structures, you might consider creating a data model and a service to handle the data manipulation, retrieval, and formatting for a cleaner and more maintainable approach.
+  
+  
+   -->
+  
+  
+  
