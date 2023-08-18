@@ -47,10 +47,12 @@
             name="contactName"
             required
           />
-          <div *ngIf="contactForm.controls['contactName'].invalid && (contactForm.controls['contactName'].dirty || contactForm.controls['contactName'].touched)" class="alert alert-danger">
-            <!-- <div *ngIf="contactForm.controls['contactName'].errors.required">
-            </div> -->
-            Name is required.
+          <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
+            <div *ngIf="name?.errors?.['required']">
+              ContactName is required
+            </div>
+            <div *ngIf="name?.hasError('uppercaseLowercase')">Name Must be in uppercase lowercase combination.`</div>
+    
         </div>
         </div>
         <div class="mb-2">
@@ -66,6 +68,7 @@
           <div *ngIf="contactForm.controls['image'].invalid && (contactForm.controls['image'].dirty || contactForm.controls['image'].touched)" class="alert alert-danger">
             <!-- <div *ngIf="contactForm.controls['contactName'].errors.required">
             </div> -->
+            
             image is required.
         </div>
         </div>
@@ -79,10 +82,12 @@
             name="photo"
             required
           />
-          <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)" class="alert alert-danger">
-            <!-- <div *ngIf="contactForm.controls['contactName'].errors.required">
-            </div> -->
-            email is required.
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
+            <div *ngIf="email?.errors?.['required']">
+              Email is required
+            </div>
+            <div *ngIf="email?.errors?.['email']">Email must be a valid email address</div>
+    
         </div>
         </div>
         <div class="mb-2">
